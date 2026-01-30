@@ -4,10 +4,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { EditableText } from "@/components/admin/EditableText";
+import { useAdmin } from "@/components/admin/AdminProvider";
 
 export function ProblemSolution() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const { content } = useAdmin();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -46,19 +49,16 @@ export function ProblemSolution() {
                         variants={itemVariants}
                         className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-sage-500"
                     >
-                        A Nova Confeitaria
+                        <EditableText contentKey="problemSolution.badge" />
                     </motion.span>
-                    <motion.h2 variants={itemVariants} className="mb-6 font-display">
-                        Você Está Pronta Para a{" "}
-                        <span className="text-terracotta-500">Transformação</span>?
+                    <motion.h2 variants={itemVariants} className="mb-6 font-display text-charcoal">
+                        <EditableText contentKey="problemSolution.title" />
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
                         className="mx-auto max-w-2xl text-charcoal-light"
                     >
-                        Esqueça os bolos pesados, cheios de pasta americana e decorações
-                        ultrapassadas. A confeitaria moderna é sobre elegância, leveza e
-                        técnica.
+                        <EditableText contentKey="problemSolution.description" multiline />
                     </motion.p>
                 </motion.div>
 
@@ -76,7 +76,7 @@ export function ProblemSolution() {
                     >
                         <div className="mb-6 flex items-center justify-between">
                             <span className="rounded-full bg-charcoal-muted/10 px-4 py-1.5 text-sm font-medium text-charcoal-muted">
-                                Confeitaria Tradicional
+                                <EditableText contentKey="problemSolution.beforeTitle" />
                             </span>
                             <svg
                                 className="h-6 w-6 text-charcoal-muted/40"
@@ -94,13 +94,7 @@ export function ProblemSolution() {
                         </div>
 
                         <ul className="space-y-4">
-                            {[
-                                "Pasta americana pesada e enjoativa",
-                                "Decorações excessivas e datadas",
-                                "Massas densas e sem estrutura",
-                                "Necessita equipamentos caros",
-                                "Difícil de precificar corretamente",
-                            ].map((item, index) => (
+                            {content.problemSolution.beforeItems.map((_, index) => (
                                 <li
                                     key={index}
                                     className="flex items-start gap-3 text-charcoal-light"
@@ -120,7 +114,7 @@ export function ProblemSolution() {
                                             />
                                         </svg>
                                     </span>
-                                    {item}
+                                    <EditableText contentKey={`problemSolution.beforeItems.${index}`} />
                                 </li>
                             ))}
                         </ul>
@@ -136,7 +130,7 @@ export function ProblemSolution() {
                     >
                         <div className="mb-6 flex items-center justify-between">
                             <span className="rounded-full bg-sage-100 px-4 py-1.5 text-sm font-medium text-sage-700">
-                                Confeitaria Contemporânea
+                                <EditableText contentKey="problemSolution.afterTitle" />
                             </span>
                             <svg
                                 className="h-6 w-6 text-sage-500"
@@ -154,13 +148,7 @@ export function ProblemSolution() {
                         </div>
 
                         <ul className="space-y-4">
-                            {[
-                                "Buttercream leve e saboroso",
-                                "Design minimalista e elegante",
-                                "Massas amanteigadas estruturadas",
-                                "Utensílios comuns de cozinha",
-                                "Ticket médio alto garantido",
-                            ].map((item, index) => (
+                            {content.problemSolution.afterItems.map((_, index) => (
                                 <li
                                     key={index}
                                     className="flex items-start gap-3 text-charcoal"
@@ -180,7 +168,7 @@ export function ProblemSolution() {
                                             />
                                         </svg>
                                     </span>
-                                    {item}
+                                    <EditableText contentKey={`problemSolution.afterItems.${index}`} />
                                 </li>
                             ))}
                         </ul>
@@ -201,11 +189,7 @@ export function ProblemSolution() {
                         variants={itemVariants}
                         className="grid gap-6 md:grid-cols-3"
                     >
-                        {[
-                            { src: "/hero-cake.png", title: "Layer Cake Clássico", style: "Buttercream Suave" },
-                            { src: "/bento-cake.png", title: "Bento Cake", style: "Pintado à Mão" },
-                            { src: "/naked-cake.png", title: "Naked Cake", style: "Rústico Elegante" },
-                        ].map((cake, index) => (
+                        {content.problemSolution.showcaseItems.map((cake, index) => (
                             <motion.div
                                 key={index}
                                 whileHover={{ y: -8 }}
@@ -213,7 +197,7 @@ export function ProblemSolution() {
                             >
                                 <div className="aspect-square overflow-hidden">
                                     <Image
-                                        src={cake.src}
+                                        src={index === 0 ? "/hero-cake.png" : index === 1 ? "/bento-cake.png" : "/naked-cake.png"}
                                         alt={cake.title}
                                         width={400}
                                         height={400}
@@ -222,9 +206,11 @@ export function ProblemSolution() {
                                 </div>
                                 <div className="p-4">
                                     <h3 className="font-display text-lg font-semibold text-charcoal">
-                                        {cake.title}
+                                        <EditableText contentKey={`problemSolution.showcaseItems.${index}.title`} />
                                     </h3>
-                                    <p className="text-sm text-charcoal-muted">{cake.style}</p>
+                                    <p className="text-sm text-charcoal-muted">
+                                        <EditableText contentKey={`problemSolution.showcaseItems.${index}.style`} />
+                                    </p>
                                 </div>
                             </motion.div>
                         ))}

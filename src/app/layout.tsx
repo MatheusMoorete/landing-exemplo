@@ -76,6 +76,8 @@ export const metadata: Metadata = {
 };
 
 
+import { AdminProvider } from "@/components/admin/AdminProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -103,7 +105,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${playfair.variable} ${manrope.variable} antialiased`}>
-        {children}
+        <AdminProvider>
+          {children}
+        </AdminProvider>
       </body>
     </html>
   );

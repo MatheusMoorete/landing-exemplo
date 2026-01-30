@@ -3,77 +3,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
-const bonuses = [
-    {
-        icon: (
-            <svg
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-            </svg>
-        ),
-        title: "Guia de Precificação para Confeitaria",
-        description:
-            "Aprenda a calcular seus custos, definir margens de lucro e precificar seus bolos para ter um negócio lucrativo.",
-        value: "R$ 97",
-    },
-    {
-        icon: (
-            <svg
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-                />
-            </svg>
-        ),
-        title: "Pack: Templates de Cardápio Editáveis",
-        description:
-            "15 templates profissionais para Canva. Personalize com suas cores e fotos para impressionar seus clientes.",
-        value: "R$ 67",
-    },
-    {
-        icon: (
-            <svg
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                />
-            </svg>
-        ),
-        title: "Capítulo Extra: 10 Receitas de Recheios",
-        description:
-            "Receitas testadas e aprovadas de recheios que combinam perfeitamente com os bolos do e-book.",
-        value: "R$ 47",
-    },
-];
-
+import { EditableText } from "@/components/admin/EditableText";
+import { useAdmin } from "@/components/admin/AdminProvider";
 
 export function Bonuses() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const { content } = useAdmin();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -94,6 +30,24 @@ export function Bonuses() {
         },
     };
 
+    const icons = [
+        (
+            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+        ),
+        (
+            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+            </svg>
+        ),
+        (
+            <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+        )
+    ];
+
     return (
         <section
             ref={ref}
@@ -111,17 +65,16 @@ export function Bonuses() {
                         variants={itemVariants}
                         className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-sage-500"
                     >
-                        Valor Extra
+                        <EditableText contentKey="bonuses.badge" />
                     </motion.span>
-                    <motion.h2 variants={itemVariants} className="mb-6 font-display">
-                        Bônus <span className="text-terracotta-500">Exclusivos</span>
+                    <motion.h2 variants={itemVariants} className="mb-6 font-display text-charcoal">
+                        <EditableText contentKey="bonuses.title" />
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
                         className="mx-auto max-w-2xl text-charcoal-light"
                     >
-                        Além de todo o conteúdo do e-book, você ainda recebe R$ 211 em bônus
-                        para acelerar seus resultados.
+                        <EditableText contentKey="bonuses.description" multiline />
                     </motion.p>
                 </motion.div>
 
@@ -132,7 +85,7 @@ export function Bonuses() {
                     animate={isInView ? "visible" : "hidden"}
                     className="grid gap-6 md:grid-cols-2"
                 >
-                    {bonuses.map((bonus, index) => (
+                    {content.bonuses.items.map((bonus, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
@@ -146,21 +99,21 @@ export function Bonuses() {
 
                             {/* Icon */}
                             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-sage-100 text-sage-700 transition-colors group-hover:bg-sage-200">
-                                {bonus.icon}
+                                {icons[index] || icons[0]}
                             </div>
 
                             {/* Content */}
                             <h3 className="mb-2 font-display text-lg font-semibold text-charcoal">
-                                {bonus.title}
+                                <EditableText contentKey={`bonuses.items.${index}.title`} />
                             </h3>
                             <p className="mb-4 text-sm text-charcoal-light">
-                                {bonus.description}
+                                <EditableText contentKey={`bonuses.items.${index}.description`} multiline />
                             </p>
 
                             {/* Value */}
                             <div className="flex items-center gap-2">
                                 <span className="text-sm text-charcoal-muted line-through">
-                                    {bonus.value}
+                                    <EditableText contentKey={`bonuses.items.${index}.value`} />
                                 </span>
                                 <span className="rounded-full bg-sage-100 px-3 py-1 text-sm font-semibold text-sage-700">
                                     Incluído
@@ -177,12 +130,12 @@ export function Bonuses() {
                     animate={isInView ? "visible" : "hidden"}
                     className="mt-12 flex justify-center"
                 >
-                    <div className="inline-flex items-center gap-4 rounded-full bg-terracotta-100 px-8 py-4">
+                    <div className="inline-flex items-center gap-4 rounded-full bg-terracotta-100 px-8 py-4 text-charcoal">
                         <span className="text-lg text-terracotta-700">
-                            Valor total em bônus:
+                            <EditableText contentKey="bonuses.totalValueLabel" />
                         </span>
                         <span className="text-2xl font-bold text-terracotta-600">
-                            R$ 211
+                            <EditableText contentKey="bonuses.totalValue" />
                         </span>
                     </div>
                 </motion.div>

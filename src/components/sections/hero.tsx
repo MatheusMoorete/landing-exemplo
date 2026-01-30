@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { EditableText } from "@/components/admin/EditableText";
 
 export function Hero() {
     return (
@@ -33,14 +34,18 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="mb-6"
                         >
-                            <span className="badge">E-Book</span>
+                            <span className="badge">
+                                <EditableText contentKey="hero.badge" />
+                            </span>
                         </motion.div>
 
                         {/* Headline */}
                         <h1 className="mb-6 font-display text-charcoal">
-                            Domine a Arte dos{" "}
+                            <EditableText contentKey="hero.titlePart1" />{" "}
                             <span className="relative">
-                                <span className="relative z-10">Bolos Contemporâneos</span>
+                                <span className="relative z-10">
+                                    <EditableText contentKey="hero.titleHighlight" />
+                                </span>
                                 <motion.span
                                     initial={{ scaleX: 0 }}
                                     animate={{ scaleX: 1 }}
@@ -48,13 +53,12 @@ export function Hero() {
                                     className="absolute -bottom-1 left-0 right-0 h-3 origin-left bg-terracotta-300 opacity-40"
                                 />
                             </span>{" "}
-                            em Sua Própria Cozinha.
+                            <EditableText contentKey="hero.titlePart2" />
                         </h1>
 
                         {/* Subheadline */}
                         <p className="mb-8 max-w-lg text-lg text-charcoal-light lg:text-xl">
-                            O guia completo com técnicas de confeitaria moderna, massas estruturadas e decorações
-                            minimalistas. Mais de 120 páginas ilustradas passo a passo.
+                            <EditableText contentKey="hero.subheadline" multiline />
                         </p>
 
                         {/* CTA */}
@@ -65,7 +69,7 @@ export function Hero() {
                                 whileTap={{ scale: 0.98 }}
                                 className="btn-primary"
                             >
-                                Baixar E-book
+                                <EditableText contentKey="hero.primaryCta" />
                                 <svg
                                     className="h-5 w-5"
                                     fill="none"
@@ -84,7 +88,7 @@ export function Hero() {
                                 href="#conteudo"
                                 className="btn-secondary"
                             >
-                                Ver Conteúdo
+                                <EditableText contentKey="hero.secondaryCta" />
                             </a>
                         </div>
 
@@ -159,7 +163,9 @@ export function Hero() {
                                         </svg>
                                     </div>
                                     <div>
-                                        <p className="text-sm font-semibold text-charcoal">Acesso Vitalício</p>
+                                        <p className="text-sm font-semibold text-charcoal">
+                                            <EditableText contentKey="hero.floatingBadge" />
+                                        </p>
                                     </div>
                                 </div>
                             </motion.div>

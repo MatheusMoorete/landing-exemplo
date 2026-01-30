@@ -3,66 +3,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-
-const chapters = [
-    {
-        number: "01",
-        title: "Massas Amanteigadas Estruturadas",
-        description:
-            "Aprenda a preparar massas que não ressecam, com estrutura perfeita para camadas. Técnicas de medição, mistura e assamento que garantem resultados consistentes.",
-        topics: [
-            "Proporções exatas para massa macia",
-            "Técnica de creaming method",
-            "Assamento uniforme",
-            "Nivelamento perfeito",
-        ],
-        pages: "32 páginas",
-    },
-    {
-        number: "02",
-        title: "O Buttercream Perfeito",
-        description:
-            "Domine a receita de buttercream estabilizado que resiste ao calor brasileiro. Aprenda variações de sabores e texturas para diferentes aplicações.",
-        topics: [
-            "Buttercream Suíço estabilizado",
-            "Buttercream Italiano",
-            "Coloração natural",
-            "Armazenamento correto",
-        ],
-        pages: "28 páginas",
-    },
-    {
-        number: "03",
-        title: "Montagem e Prensagem (Blindagem)",
-        description:
-            "A técnica secreta para bolos com camadas perfeitas. Aprenda a prensar, nivelar e criar a estrutura que sustenta decorações elaboradas.",
-        topics: [
-            "Técnica de crumb coat",
-            "Prensagem profissional",
-            "Nivelamento de topo",
-            "Estrutura para andares",
-        ],
-        pages: "24 páginas",
-    },
-    {
-        number: "04",
-        title: "Decoração Minimalista e Espatulagem",
-        description:
-            "Transforme seus bolos com técnicas de acabamento que impressionam. Do liso perfeito às texturas modernas que estão em alta.",
-        topics: [
-            "Espatulagem lisa perfeita",
-            "Texturas com espátula",
-            "Flores naturais comestíveis",
-            "Técnicas de pintura em buttercream",
-        ],
-        pages: "36 páginas",
-    },
-];
+import { EditableText } from "@/components/admin/EditableText";
+import { useAdmin } from "@/components/admin/AdminProvider";
 
 export function Curriculum() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const { content } = useAdmin();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -101,18 +49,16 @@ export function Curriculum() {
                         variants={itemVariants}
                         className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-sage-500"
                     >
-                        Conteúdo do E-book
+                        <EditableText contentKey="curriculum.badge" />
                     </motion.span>
-                    <motion.h2 variants={itemVariants} className="mb-6 font-display">
-                        O Que Você Vai{" "}
-                        <span className="text-terracotta-500">Aprender</span>
+                    <motion.h2 variants={itemVariants} className="mb-6 font-display text-charcoal">
+                        <EditableText contentKey="curriculum.title" />
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
                         className="mx-auto max-w-2xl text-charcoal-light"
                     >
-                        Um guia completo dividido em 4 capítulos práticos, com mais de 120
-                        páginas ilustradas passo a passo.
+                        <EditableText contentKey="curriculum.description" multiline />
                     </motion.p>
                 </motion.div>
 
@@ -123,7 +69,7 @@ export function Curriculum() {
                     animate={isInView ? "visible" : "hidden"}
                     className="mx-auto max-w-4xl"
                 >
-                    {chapters.map((chapter, index) => (
+                    {content.curriculum.chapters.map((chapter, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
@@ -137,14 +83,14 @@ export function Curriculum() {
                             >
                                 <div className="flex items-center gap-6">
                                     <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-sage-100 font-display text-xl font-bold text-sage-700 transition-colors group-hover:bg-sage-200">
-                                        {chapter.number}
+                                        <EditableText contentKey={`curriculum.chapters.${index}.number`} />
                                     </span>
                                     <div>
                                         <h3 className="font-display text-lg font-semibold text-charcoal lg:text-xl">
-                                            {chapter.title}
+                                            <EditableText contentKey={`curriculum.chapters.${index}.title`} />
                                         </h3>
                                         <p className="text-sm text-charcoal-muted">
-                                            {chapter.pages}
+                                            <EditableText contentKey={`curriculum.chapters.${index}.pages`} />
                                         </p>
                                     </div>
                                 </div>
@@ -177,7 +123,7 @@ export function Curriculum() {
                                 <div className="rounded-b-xl bg-white px-6 pb-6">
                                     <div className="border-t border-sage-100 pt-6">
                                         <p className="mb-4 text-charcoal-light">
-                                            {chapter.description}
+                                            <EditableText contentKey={`curriculum.chapters.${index}.description`} multiline />
                                         </p>
                                         <ul className="grid gap-2 sm:grid-cols-2">
                                             {chapter.topics.map((topic, topicIndex) => (
@@ -198,7 +144,7 @@ export function Curriculum() {
                                                             d="M5 13l4 4L19 7"
                                                         />
                                                     </svg>
-                                                    {topic}
+                                                    <EditableText contentKey={`curriculum.chapters.${index}.topics.${topicIndex}`} />
                                                 </li>
                                             ))}
                                         </ul>
@@ -231,7 +177,7 @@ export function Curriculum() {
                             />
                         </svg>
                         <span className="font-medium text-sage-700">
-                            4 capítulos • +120 páginas ilustradas
+                            <EditableText contentKey="curriculum.footerBadge" />
                         </span>
                     </div>
                 </motion.div>

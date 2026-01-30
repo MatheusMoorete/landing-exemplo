@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { EditableText } from "@/components/admin/EditableText";
 
 export function Footer() {
     const ref = useRef(null);
@@ -23,17 +24,17 @@ export function Footer() {
                     {/* Brand */}
                     <div>
                         <p className="mb-4 font-display text-xl text-white">
-                            Bolos Contemporâneos
+                            <EditableText contentKey="footer.brandName" />
                         </p>
                         <p className="text-sm leading-relaxed text-white/60">
-                            Transformando amantes da confeitaria em profissionais através de técnicas modernas e acessíveis.
+                            <EditableText contentKey="footer.brandDesc" multiline />
                         </p>
                     </div>
 
                     {/* Links */}
                     <div>
                         <h4 className="mb-4 font-display text-lg text-white">
-                            Links Úteis
+                            <EditableText contentKey="footer.linksTitle" />
                         </h4>
                         <ul className="space-y-3 text-sm">
                             <li>
@@ -74,7 +75,7 @@ export function Footer() {
                     {/* Contact */}
                     <div>
                         <h4 className="mb-4 font-display text-lg text-white">
-                            Contato
+                            <EditableText contentKey="footer.contactTitle" />
                         </h4>
                         <a
                             href="mailto:contato@boloscontemporaneos.com"
@@ -93,7 +94,7 @@ export function Footer() {
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                 />
                             </svg>
-                            contato@boloscontemporaneos.com
+                            <EditableText contentKey="footer.contactEmail" />
                         </a>
 
                         <p className="mb-3 text-sm text-white/40">Redes Sociais</p>
@@ -136,9 +137,9 @@ export function Footer() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-center text-sm text-white/40"
                 >
-                    <p>© {new Date().getFullYear()} Bolos Contemporâneos. Todos os direitos reservados.</p>
-                    <p className="mt-2">
-                        Este produto é comercializado com garantia através da plataforma Hotmart.
+                    <p>© {new Date().getFullYear()} <EditableText contentKey="footer.copyright" /></p>
+                    <p className="mt-2 text-white/30">
+                        <EditableText contentKey="footer.hotmartDisclaimer" multiline />
                     </p>
                 </motion.div>
             </div>

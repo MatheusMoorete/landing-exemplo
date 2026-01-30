@@ -1,0 +1,156 @@
+{
+    "hero": {
+        "badge": "E-Book",
+        "titlePart1": "Domine a Arte dos",
+        "titleHighlight": "Bolos Contemporâneos",
+        "titlePart2": "em Sua Própria Cozinha.",
+        "subheadline": "O guia completo com técnicas de confeitaria moderna, massas estruturadas e decorações minimalistas. Mais de 120 páginas ilustradas passo a passo.",
+        "primaryCta": "Baixar E-book",
+        "secondaryCta": "Ver Conteúdo",
+        "floatingBadge": "Acesso Vitalício"
+    },
+    "problemSolution": {
+        "badge": "A Nova Confeitaria",
+        "title": "Você Está Pronta Para a Transformação?",
+        "titleHighlight": "Transformação",
+        "description": "Esqueça os bolos pesados, cheios de pasta americana e decorações ultrapassadas. A confeitaria moderna é sobre elegância, leveza e técnica.",
+        "beforeTitle": "Confeitaria Tradicional",
+        "beforeItems": [
+            "Pasta americana pesada e enjoativa",
+            "Decorações excessivas e datadas",
+            "Massas densas e sem estrutura",
+            "Necessita equipamentos caros",
+            "Difícil de precificar corretamente"
+        ],
+        "afterTitle": "Confeitaria Contemporânea",
+        "afterItems": [
+            "Buttercream leve e saboroso",
+            "Design minimalista e elegante",
+            "Massas amanteigadas estruturadas",
+            "Utensílios comuns de cozinha",
+            "Ticket médio alto garantido"
+        ],
+        "showcaseItems": [
+            { "title": "Layer Cake Clássico", "style": "Buttercream Suave" },
+            { "title": "Bento Cake", "style": "Pintado à Mão" },
+            { "title": "Naked Cake", "style": "Rústico Elegante" }
+        ]
+    },
+    "curriculum": {
+        "badge": "Conteúdo do E-book",
+        "title": "O Que Você Vai Aprender",
+        "titleHighlight": "Aprender",
+        "description": "Um guia completo dividido em 4 capítulos práticos, com mais de 120 páginas ilustradas passo a passo.",
+        "chapters": [
+            {
+                "number": "01",
+                "title": "Massas Amanteigadas Estruturadas",
+                "description": "Aprenda a preparar massas que não ressecam, com estrutura perfeita para camadas. Técnicas de medição, mistura e assamento que garantem resultados consistentes.",
+                "topics": ["Proporções exatas para massa macia", "Técnica de creaming method", "Assamento uniforme", "Nivelamento perfeito"],
+                "pages": "32 páginas"
+            },
+            {
+                "number": "02",
+                "title": "O Buttercream Perfeito",
+                "description": "Domine a receita de buttercream estabilizado que resiste ao calor brasileiro. Aprenda variações de sabores e texturas para diferentes aplicações.",
+                "topics": ["Buttercream Suíço estabilizado", "Buttercream Italiano", "Coloração natural", "Armazenamento correto"],
+                "pages": "28 páginas"
+            },
+            {
+                "number": "03",
+                "title": "Montagem e Prensagem (Blindagem)",
+                "description": "A técnica secreta para bolos com camadas perfeitas. Aprenda a prensar, nivelar e criar a estrutura que sustenta decorações elaboradas.",
+                "topics": ["Técnica de crumb coat", "Prensagem profissional", "Nivelamento de topo", "Estrutura para andares"],
+                "pages": "24 páginas"
+            },
+            {
+                "number": "04",
+                "title": "Decoração Minimalista e Espatulagem",
+                "description": "Transforme seus bolos com técnicas de acabamento que impressionam. Do liso perfeito às texturas modernas que estão em alta.",
+                "topics": ["Espatulagem lisa perfeita", "Texturas com espátula", "Flores naturais comestíveis", "Técnicas de pintura em buttercream"],
+                "pages": "36 páginas"
+            }
+        ],
+        "footerBadge": "4 capítulos • +120 páginas ilustradas"
+    },
+    "socialProof": {
+        "badge": "Resultados Reais",
+        "title": "O Que Nossas Leitoras Estão Dizendo",
+        "titleHighlight": "Estão Dizendo",
+        "description": "Mais de 500 leitoras já transformaram sua confeitaria com o e-book Bolos Contemporâneos.",
+        "testimonials": [
+            { "name": "Marina Costa", "location": "São Paulo, SP", "text": "Transformou minha confeitaria! Em 2 meses já estava faturando R$ 5.000 só com encomendas de bolos modernos." },
+            { "name": "Juliana Ferreira", "location": "Belo Horizonte, MG", "text": "O buttercream estabilizado é um game changer! Meus bolos agora duram horas na mesa sem derreter." },
+            { "name": "Carolina Dias", "location": "Rio de Janeiro, RJ", "text": "Finalmente consegui fazer aqueles bolos lisos que via no Pinterest. A técnica de espatulagem é perfeita!" },
+            { "name": "Amanda Santos", "location": "Curitiba, PR", "text": "Comecei do zero e hoje tenho uma agenda cheia de encomendas. O e-book paga-se no primeiro bolo vendido!" },
+            { "name": "Beatriz Lima", "location": "Porto Alegre, RS", "text": "O módulo de precificação mudou minha vida. Agora sei quanto cobrar e não trabalho mais de graça." },
+            { "name": "Patricia Moura", "location": "Salvador, BA", "text": "Os Bento Cakes se tornaram meu carro-chefe. Vendo para casais, noivas e presentes corporativos!" }
+        ],
+        "instructor": {
+            "badge": "Sua Mentora",
+            "name": "Chef Isabella Mendes",
+            "bio1": "Confeiteira profissional formada pelo Le Cordon Bleu Paris, especialista em confeitaria contemporânea e design de bolos para marcas premium.",
+            "bio2": "Já ensinou mais de 3.000 alunas através de cursos presenciais e online, transformando cozinhas domésticas em verdadeiros ateliês de confeitaria moderna.",
+            "statsValue": "12+",
+            "statsLabel": "Anos de experiência",
+            "tag1": "Le Cordon Bleu",
+            "tag2": "+3.000 alunas"
+        }
+    },
+    "bonuses": {
+        "badge": "Valor Extra",
+        "title": "Bônus Exclusivos",
+        "titleHighlight": "Exclusivos",
+        "description": "Além de todo o conteúdo do e-book, você ainda recebe R$ 211 em bônus para acelerar seus resultados.",
+        "items": [
+            { "title": "Guia de Precificação para Confeitaria", "description": "Aprenda a calcular seus custos, definir margens de lucro e precificar seus bolos para ter um negócio lucrativo.", "value": "R$ 97" },
+            { "title": "Pack: Templates de Cardápio Editáveis", "description": "15 templates profissionais para Canva. Personalize com suas cores e fotos para impressionar seus clientes.", "value": "R$ 67" },
+            { "title": "Capítulo Extra: 10 Receitas de Recheios", "description": "Receitas testadas e aprovadas de recheios que combinam perfeitamente com os bolos do e-book.", "value": "R$ 47" }
+        ],
+        "totalValueLabel": "Valor total em bônus:",
+        "totalValue": "R$ 211"
+    },
+    "pricing": {
+        "badge": "Oferta Especial",
+        "title": "Hoje",
+        "description": "Investimento único com acesso vitalício e todos os bônus incluídos.",
+        "popularBadge": "MAIS VENDIDO",
+        "priceOld": "R$ 697,00",
+        "priceLabel": "Por apenas",
+        "priceValue": "197",
+        "priceCents": "00",
+        "priceInstallments": "ou 12x de R$ 19,58",
+        "includedLabel": "O que está incluído:",
+        "included": ["E-book completo em PDF", "120+ páginas ilustradas", "Download imediato", "Acesso vitalício", "Guia de Precificação (R$ 97)", "Templates de Cardápio (R$ 67)", "Receitas Extras (R$ 47)", "Atualizações futuras gratuitas"],
+        "cta": "Quero Baixar o E-book",
+        "guaranteeTitle": "7 dias de garantia incondicional",
+        "guaranteeDesc": "Não gostou? Devolvemos 100% do seu dinheiro."
+    },
+    "faq": {
+        "badge": "Dúvidas Frequentes",
+        "title": "Perguntas Frequentes",
+        "titleHighlight": "Frequentes",
+        "description": "Tire suas principais dúvidas sobre o e-book.",
+        "items": [
+            { "question": "Preciso de batedeira planetária para fazer os bolos?", "answer": "Não! O e-book foi desenvolvido para ser acessível. Você pode fazer todos os bolos com uma batedeira comum ou até mesmo à mão. Ensinamos técnicas que compensam a falta de equipamentos industriais. O importante é a técnica, não o equipamento." },
+            { "question": "O e-book serve para iniciantes na confeitaria?", "answer": "Sim! O e-book começa do zero, com explicações detalhadas de cada técnica. Mesmo quem nunca fez um bolo consegue acompanhar e obter resultados profissionais. Temos leitoras que começaram do absoluto zero e hoje faturam mais de R$ 5.000/mês com bolos." },
+            { "question": "Em qual formato recebo o e-book?", "answer": "Você receberá o e-book em formato PDF de alta qualidade, otimizado para leitura em qualquer dispositivo (celular, tablet ou computador). Você também pode imprimir se preferir." },
+            { "question": "Como funciona o download?", "answer": "Após a confirmação do pagamento, você recebe imediatamente um e-mail com o link para download. O acesso é vitalício, você pode baixar quantas vezes quiser." },
+            { "question": "O buttercream derrete no calor do Brasil?", "answer": "Ensinamos a receita do Buttercream Estabilizado, especialmente desenvolvida para resistir ao clima tropical brasileiro. Seus bolos ficarão perfeitos mesmo em dias quentes de até 35°C. É a técnica mais pedida!" },
+            { "question": "Posso parcelar o pagamento?", "answer": "Sim! Você pode parcelar em até 12x no cartão de crédito. Também aceitamos PIX e boleto bancário com desconto especial." },
+            { "question": "E se eu não gostar do e-book?", "answer": "Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeita, basta enviar um e-mail solicitando o reembolso e devolvemos 100% do seu investimento, sem perguntas." }
+        ],
+        "footerLabel": "Ainda tem dúvidas?",
+        "whatsappCta": "Fale pelo WhatsApp",
+        "whatsappLink": "https://wa.me/5511999999999?text=Olá! Tenho uma dúvida sobre o e-book Bolos Contemporâneos"
+    },
+    "footer": {
+        "brandName": "Bolos Contemporâneos",
+        "brandDesc": "Transformando amantes da confeitaria em profissionais através de técnicas modernas e acessíveis.",
+        "linksTitle": "Links Úteis",
+        "contactTitle": "Contato",
+        "contactEmail": "contato@boloscontemporaneos.com",
+        "copyright": "Bolos Contemporâneos. Todos os direitos reservados.",
+        "hotmartDisclaimer": "Este produto é comercializado com garantia através da plataforma Hotmart."
+    }
+}
