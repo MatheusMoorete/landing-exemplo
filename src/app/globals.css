@@ -1,0 +1,313 @@
+@import "tailwindcss";
+
+/* ==========================================
+   Design System: Luxury Minimal + Organic Warmth
+   ========================================== */
+
+:root {
+  /* Primary Palette - Organic Luxury */
+  --sage-50: #f7f9f7;
+  --sage-100: #e8ede8;
+  --sage-200: #c9d6c9;
+  --sage-300: #a3b8a3;
+  --sage-500: #7a9178;
+  --sage-700: #4a5a49;
+  
+  /* Accent - Warm Terracotta */
+  --terracotta-300: #e4b894;
+  --terracotta-400: #d4a574;
+  --terracotta-500: #c4956a;
+  --terracotta-600: #b5835c;
+  
+  /* Neutrals */
+  --cream: #fdfbf7;
+  --cream-dark: #f8f5ef;
+  --charcoal: #2a2a2a;
+  --charcoal-light: #4a4a4a;
+  --charcoal-muted: #6a6a6a;
+  
+  /* Semantic */
+  --background: var(--cream);
+  --foreground: var(--charcoal);
+  --accent: var(--terracotta-500);
+  --accent-hover: var(--terracotta-600);
+  --muted: var(--sage-200);
+  --muted-foreground: var(--charcoal-muted);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(42, 42, 42, 0.05);
+  --shadow-md: 0 4px 12px rgba(42, 42, 42, 0.08);
+  --shadow-lg: 0 8px 24px rgba(42, 42, 42, 0.12);
+  --shadow-xl: 0 16px 48px rgba(42, 42, 42, 0.16);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  
+  /* Custom Colors */
+  --color-sage-50: var(--sage-50);
+  --color-sage-100: var(--sage-100);
+  --color-sage-200: var(--sage-200);
+  --color-sage-300: var(--sage-300);
+  --color-sage-500: var(--sage-500);
+  --color-sage-700: var(--sage-700);
+  
+  --color-terracotta-300: var(--terracotta-300);
+  --color-terracotta-400: var(--terracotta-400);
+  --color-terracotta-500: var(--terracotta-500);
+  --color-terracotta-600: var(--terracotta-600);
+  
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-light: var(--charcoal-light);
+  --color-charcoal-muted: var(--charcoal-muted);
+  
+  /* Font families */
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-manrope);
+}
+
+/* ==========================================
+   Base Styles
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================
+   Typography System
+   ========================================== */
+
+.font-display {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-body {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--charcoal);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  color: var(--charcoal-light);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+/* ==========================================
+   Component Utilities
+   ========================================== */
+
+.container-narrow {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-narrow {
+    padding-inline: 3rem;
+  }
+}
+
+.section-padding {
+  padding-block: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-block: 8rem;
+  }
+}
+
+/* ==========================================
+   Button Styles
+   ========================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--terracotta-500);
+  color: white;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background: var(--terracotta-600);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--charcoal);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--sage-300);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--sage-100);
+  border-color: var(--sage-500);
+}
+
+/* ==========================================
+   Card Styles
+   ========================================== */
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* ==========================================
+   Marquee Animation
+   ========================================== */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ==========================================
+   Scroll Animations
+   ========================================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   Badge Styles
+   ========================================== */
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--sage-500);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+}
+
+.badge-accent {
+  background: var(--terracotta-500);
+}
+
+/* ==========================================
+   Divider
+   ========================================== */
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--sage-200),
+    transparent
+  );
+}
+
+/* ==========================================
+   Focus States (Accessibility)
+   ========================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--terracotta-500);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   Selection
+   ========================================== */
+
+::selection {
+  background: var(--terracotta-300);
+  color: var(--charcoal);
+}
